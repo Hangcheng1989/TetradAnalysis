@@ -8,16 +8,29 @@
 # Instructions to use this package:
 Release it in a folder, e.g. "D:/TetradAnalysisRpackage"
 The use R codes below to install package:
+
 install.packages("devtools")
+
 library("devtools")
+
 devtools::install_github("klutometis/roxygen")
+
 library(roxygen2)
+
 setwd("D:/TetradAnalysisRpackage/ConfirmatoryTetradAnalysis")
+
 setwd("..")
+
 install("ConfirmatoryTetradAnalysis")
+
 install.packages("lavaan")
+
 library("lavaan")
+
 TetradAnalysisNoRandom
+
 NestedOrNot
+
 ?TetradAnalysisNoRandom
+
 ?NestedOrNot
