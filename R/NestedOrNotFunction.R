@@ -5,6 +5,7 @@
 #' @keywords Nested or not in Confirmatory Tetrad Analysis
 #' @export
 #' @examples
+#' NestedOrNot()
 
 
 ##################################################################################
