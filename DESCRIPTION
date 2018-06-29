@@ -1,10 +1,10 @@
 Package: ConfirmatoryTetradAnalysis
-Title: Confirmatory Tetrad Analysis
+Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
-Authors@R: person("Hangcheng", "Liu", email = "liuh8@mymail.vcu.edu", role = c("aut", "cre"))
-Description: Function "TetradAnalysisNoRandom" is used to run tetrad analysis and function "NestedOrNot" is used to know two SEM models are nested in terms of tetrads or not.
+Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
 Depends: R (>= 3.3.3)
-License: GPL (>= 2)
+License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1.9000
