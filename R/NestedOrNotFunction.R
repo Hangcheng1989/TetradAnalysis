@@ -43,10 +43,3 @@ NestedOrNot<-function(Samplecov1,FactorModel1,Size1,Samplecov2,FactorModel2,Size
 	return(results)
 }
 ########### NestedOrNot Function End#######################################################
-
-
-
-
-
-
-
