@@ -19,6 +19,8 @@ library(roxygen2)
 
 setwd("D:/TetradAnalysisRpackage/ConfirmatoryTetradAnalysis")
 
+document()
+
 setwd("..")
 
 install("ConfirmatoryTetradAnalysis")
