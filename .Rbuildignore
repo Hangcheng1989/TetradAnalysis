@@ -1,5 +1,2 @@
-\.git
-^README\.md$
-\.gitignore
-Makefile
-^\.travis\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$
