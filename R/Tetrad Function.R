@@ -5,7 +5,6 @@
 #' @keywords Confirmatory Tetrad Analysis
 #' @export
 #' @examples
-#' TetradAnalysisNoRandom()
 
 
 ##################################################################################
