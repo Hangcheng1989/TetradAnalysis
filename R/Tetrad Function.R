@@ -3,7 +3,6 @@
 #' This function allows you to run Confirmatory Tetrad Analysis from Bollen 1993.
 #' @param "Samplecov", "FactorModel", and "Size"
 #' @keywords Confirmatory Tetrad Analysis
-#' @export
 #' @examples
 #' TetradAnalysisNoRandom()
 
