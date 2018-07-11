@@ -4,24 +4,57 @@
 \alias{TetradAnalysisNoRandom}
 \title{Confirmatory Tetrad Analysis Function}
 \usage{
-TetradAnalysisNoRandom(SampleData, ModelFormula, SampleSize)
+TetradAnalysisNoRandom(Samplecov, FactorModel, Size)
 }
 \arguments{
-\item{"Samplecov", An optional data frame containing the observed variables used in the model. }
-\item{"ModelFormula", A description of the user-specified model. Typically, the model is described using the lavaan model syntax. }
-\item{"SampleSize", Size of sample data.}
+\item{"Data"}{An optional data frame containing the observed variables used in the model.}
+
+\item{"FactorModel"}{A description of the user-specified model. The model is described using the lavaan model synta(Rosseel, 2012).}
+
+\item{"Size"}{Size of the data sample.}
+}
+\value{
+"T",     Test statistic for multivariate test in Confirmatory Tetrad Analysis.
+
+"MultiPvalue",     P-value for multivariate test in Confirmatory Tetrad Analysis.
+
+"NRVT",     Nonredundant vanishing tetrad setting implied by the inputted model.
+
+"NRVT_Num",     Nonredundant vanishing tetrad number.
+
+"EmpiricalTetrads",     Model implied vanishing tetrads from empirical method(Bollen, 1993).
+
+"Modelcov",     Model implied variance-covariance matrix.
 }
 \description{
-This function is used to run Confirmatory Tetrad Analysis(from Bollen 1993).
-}
-\Value{
-\item{"T", Test statistic for multivariate test in confirmatory tetrad analysis}
-\item{"MultiPvalue", P-value for multivariate test in confirmatory tetrad analysis}
-\item{"NRVT", Nonredundant vanishing tetrad setting for inputted model}
-\item{"NRVT", Nonredundant vanishing tetrad setting for inputted model}  
+"TetradAnalysisNoRandom" is used to run Confirmatory Tetrad Analysis(Bollen, 1993).
 }
 \examples{
-TetradAnalysisNoRandom()
+## Input sample variance-covariance matrix "(Sampledata) ".
+data<-c(2.18, 0.63, 0.50, 0.22, 0.39, 0.42, 0.63, 1.44, 0.50, 0.12, 0.11, 0.15, 0.50, 0.50, 1.71, 0.87, 0.59, 0.48, 0.22, 0.12, 0.87, 1.46, 0.54, 0.42, 
+0.39, 0.11, 0.59, 0.54, 1.12, 0.23, 0.42, 0.15, 0.48, 0.42, 0.23, 1.42)
+Sampledata <- matrix(data, nrow = 6, ncol = 6, byrow = TRUE)
+colnames(Sampledata) <- c('x1','x2','x3','x4','x5','x6')
+
+## Sample size
+Size<-100
+
+## Input model
+FactorModel<-'
+Y1 =~ x1 + x2 + x3
+Y2 =~ x4 + x5 + x6
+Y2 ~ Y1
+x3 ~ x4
+'
+
+## Use "TetradAnalysisNoRandom" to run Confirmatory Tetrad Analysis
+Find1B<-TetradAnalysisNoRandom(Sampledata,FactorModel,Size)
+Find1B
+}
+\references{
+Bollen, K. A., & Ting, K. F. (1993). Confirmatory tetrad analysis. Sociological methodology, 147-175.
+
+Rosseel, Y. (2012). lavaan: An R package for structural equation modeling. Journal of Statistical Software, 48(2), 1-36.
 }
 \keyword{Analysis}
 \keyword{Confirmatory}
