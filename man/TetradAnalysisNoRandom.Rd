@@ -4,13 +4,21 @@
 \alias{TetradAnalysisNoRandom}
 \title{Confirmatory Tetrad Analysis Function}
 \usage{
-TetradAnalysisNoRandom(Samplecov, FactorModel, Size)
+TetradAnalysisNoRandom(SampleData, ModelFormula, SampleSize)
 }
 \arguments{
-\item{"Samplecov", }{"FactorModel", and "Size"}
+\item{"Samplecov", An optional data frame containing the observed variables used in the model. }
+\item{"ModelFormula", A description of the user-specified model. Typically, the model is described using the lavaan model syntax. }
+\item{"SampleSize", Size of sample data.}
 }
 \description{
-This function allows you to run Confirmatory Tetrad Analysis from Bollen 1993.
+This function is used to run Confirmatory Tetrad Analysis(from Bollen 1993).
+}
+\Value{
+\item{"T", Test statistic for multivariate test in confirmatory tetrad analysis}
+\item{"MultiPvalue", P-value for multivariate test in confirmatory tetrad analysis}
+\item{"NRVT", Nonredundant vanishing tetrad setting for inputted model}
+\item{"NRVT", Nonredundant vanishing tetrad setting for inputted model}  
 }
 \examples{
 TetradAnalysisNoRandom()
