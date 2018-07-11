@@ -1,11 +1,43 @@
 #' Confirmatory Tetrad Analysis Function
 #'
-#' This function allows you to run Confirmatory Tetrad Analysis from Bollen 1993.
-#' @param "Samplecov", "FactorModel", and "Size"
+#' "TetradAnalysisNoRandom" is used to run Confirmatory Tetrad Analysis(Bollen, 1993).
+#' @param "Data" An optional data frame containing the observed variables used in the model.
+#' @param "FactorModel" A description of the user-specified model. The model is described using the lavaan model synta(Rosseel, 2012).
+#' @param "Size" Size of the data sample.
 #' @keywords Confirmatory Tetrad Analysis
-#' @export
+#' @return "T",     Test statistic for multivariate test in Confirmatory Tetrad Analysis.
+#' @return "MultiPvalue",     P-value for multivariate test in Confirmatory Tetrad Analysis.
+#' @return "NRVT",     Nonredundant vanishing tetrad setting implied by the inputted model.
+#' @return "NRVT_Num",     Nonredundant vanishing tetrad number.
+#' @return "EmpiricalTetrads",     Model implied vanishing tetrads from empirical method(Bollen, 1993).
+#' @return "Modelcov",     Model implied variance-covariance matrix.
+
+#' @references Bollen, K. A., & Ting, K. F. (1993). Confirmatory tetrad analysis. Sociological methodology, 147-175.
+#' @references Rosseel, Y. (2012). lavaan: An R package for structural equation modeling. Journal of Statistical Software, 48(2), 1-36.
+	        
+
 #' @examples
-#' TetradAnalysisNoRandom()
+
+#' ## Input sample variance-covariance matrix "(Sampledata) ".
+#' data<-c(2.18, 0.63, 0.50, 0.22, 0.39, 0.42, 0.63, 1.44, 0.50, 0.12, 0.11, 0.15, 0.50, 0.50, 1.71, 0.87, 0.59, 0.48, 0.22, 0.12, 0.87, 1.46, 0.54, 0.42, 
+#'	0.39, 0.11, 0.59, 0.54, 1.12, 0.23, 0.42, 0.15, 0.48, 0.42, 0.23, 1.42)
+#' Sampledata <- matrix(data, nrow = 6, ncol = 6, byrow = TRUE)
+#' colnames(Sampledata) <- c('x1','x2','x3','x4','x5','x6')
+#'
+#' ## Sample size
+#' Size<-100
+#'
+#' ## Input model
+#' FactorModel<-'
+#' Y1 =~ x1 + x2 + x3
+#' Y2 =~ x4 + x5 + x6
+#' Y2 ~ Y1
+#' x3 ~ x4
+#' '
+#'
+#' ## Use "TetradAnalysisNoRandom" to run Confirmatory Tetrad Analysis
+#' Find1B<-TetradAnalysisNoRandom(Sampledata,FactorModel,Size)
+#' Find1B
 
 
 ##################################################################################
